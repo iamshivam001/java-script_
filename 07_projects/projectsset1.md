@@ -37,3 +37,68 @@ buttons.forEach(function (button) {
   })
 });
 ```
+
+## project 2 solution 
+
+``` javascript
+const form = document.querySelector('form');
+// this usecase wii give you empty 
+// const height = parseInt(document.querySelector('#height').value) 
+    
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const results = document.querySelector('#results');
+
+  if(height === '' || height <= 0 || isNaN(height)){
+    results.innerHTML = `Please give a valid heights ${height}`;
+  } else if(weight === '' || weight <= 0 || isNaN(weight)){
+    results.innerHTML = `Please give a valid weight ${weight}`;
+  } else {
+    const bmi = (weight / ((height*height)/10000)).toFixed(2)
+    //show the result
+    results.innerHTML = `<span>${bmi}</span>`
+    // results.innerHTML = `${bmi}`
+    
+//   }
+  
+// });
+
+// Display BMI Weight Guide based on the BMI value
+let bmiWeightGuide = '';
+if (bmi < 18.6) {
+  bmiWeightGuide = 'Underweight';
+} else if (bmi >= 18.6 && bmi <= 24.9) {
+  bmiWeightGuide = 'Normal Range';
+} else {
+  bmiWeightGuide = 'Overweight';
+}
+
+// Create a new span element
+const bmiWeightGuideElement = document.createElement('span');
+
+// Set the text content of the span element to the BMI Weight Guide
+bmiWeightGuideElement.textContent = `BMI Weight Guide: ${bmiWeightGuide}`;
+
+// Append the span element to the results
+// results.appendChild(bmiWeightGuideElement);
+
+results.innerHTML += `<br><span>BMI Weight Guide: ${bmiWeightGuide}</span>`;
+
+// We append the BMI Weight Guide to the results element by updating its innerHTML. We use the += operator to append to the existing content of results.
+
+// <br> adds a line break for better formatting.
+// <span> is used to enclose the BMI Weight Guide for possible styling.
+// ${bmiWeightGuide} inserts the BMI Weight Guide determined based on the BMI value into the HTML string.
+
+
+}
+  
+ });
+
+
+
+```
