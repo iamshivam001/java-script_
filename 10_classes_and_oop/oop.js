@@ -5,7 +5,7 @@ const user = {
     getUserDetails: function(){
         // console.log("Got user details from database");
         // console.log(`Username: ${this.username}`);
-        console.log(this);
+        // console.log(this);
     }
 }
  
@@ -23,7 +23,7 @@ function User(username, loginCount, isLogin) {
     this.isLogin = isLogin;
 
     this.greeting = function() {
-        console.log(`Welcome ${this.username}`);
+        // console.log(`Welcome ${this.username}`);
     }
 
     return this
@@ -32,8 +32,22 @@ function User(username, loginCount, isLogin) {
 const userOne = new User("Shivam",12,true)
 // const userTwo = new User("Rohan",26,False)
 // console.log(userOne);
-console.log(userOne.constructor);
+//     console.log(userOne.constructor);
 //jab bhi ap new keyword likhte ho to empty object create hota hy jisko ap instances bolte ho 
 // constructor function call hota hy new keyword k karan argument warega usmai pack krke humko dy deta hy 
 // this keyword jo bhi apne argument likhe hy wo usmai inject ho jate hy 
 // apko mil jata hy function k andar
+
+
+const map = new Map();
+map.set ('IN' , "INDIA")
+map.set ('DE' , "GERMANY")
+map.set ('FR' , "FRANCE")
+
+for (const [key, value] of map) {
+    console.log(key, ':-', value);
+}
+
+
+
+
