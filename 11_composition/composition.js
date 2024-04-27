@@ -68,3 +68,4 @@ const c2f = (fn1,f2) => (a,b) => f2(fn1(a,b));
 
 const task = c2f(multiply , square);
 console.log(task(5,3));
+
