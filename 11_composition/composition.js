@@ -67,5 +67,24 @@ const c2f = (fn1,f2) => (a,b) => f2(fn1(a,b));
 
 
 const task = c2f(multiply , square);
-console.log(task(5,3));
+// console.log(task(5,3));
+
+// objec destructring
+// let user = {
+//     name: "Shivam",
+//     email: "xyz@gmail.com",
+//     location: "Delhi",
+// };
+
+// let { name, email, location } = user; // Object destructuring
+// console.log(name);
+
+// Array Destructring
+let user = ["shivam", "delhi", 25];
+
+    let [name, location, age] = user;
+
+    console.log(name);
+    console.log(location);
+    console.log(age);
 
